@@ -1,39 +1,14 @@
 # tsExample
 Angular 2.0 example with TypeScript - ForwardJS 2015
 
-## Step 0
+## Step 1
 
-1. Install type definition files
+1. Create templates folder 
 
-`npm install -g tsd@^0.6.0`
+2. Create a main.html and replace the view template with template url.
 
-2. Install angular2 ES6 promises and rx libraries.
+3. Add an input field to the main.html
 
-` tsd install angular2 es6-promise rx rx-lite`
+4. Add a button to the main.html 
 
-3. Install TypeScript 
-
-`npm install -g typescript@^1.5.0-beta`
-
-4. Compile and watch your app.ts file
-
-`tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts`
-
-5. Define your first component in app.ts file
-
-```
-@Component({})
-@View({})
-class FirstComponent{
-  constructor(){
-  ...
-  }
-}
-```
-
-6. Bootsrap the app
-
-```
-bootstrap(FirstComponent);
-```
-
+5. Add a click event to the button to get the new value from input field and assign it to the name variable. 

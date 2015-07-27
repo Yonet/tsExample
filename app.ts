@@ -8,7 +8,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 	selector: 'my-app' // Defines the <my-app></my-app> tag
 })
 @View({
-	template: '<h1>Hello {{ name }}</h1>' // Defines the inline template for the component
+	templateUrl: 'templates/main.html' // Defines the inline template for the component
 })
 
 class MyAppComponent {
@@ -16,6 +16,7 @@ class MyAppComponent {
 	constructor() {
 		this.name = 'Aysegul';
 	}
+
 }
 
 bootstrap(MyAppComponent);

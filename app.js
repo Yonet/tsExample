@@ -22,7 +22,7 @@ var MyAppComponent = (function () {
             selector: 'my-app' // Defines the <my-app></my-app> tag
         }),
         angular2_1.View({
-            template: '<h1>Hello {{ name }}</h1>' // Defines the inline template for the component
+            templateUrl: 'templates/main.html' // Defines the inline template for the component
         }), 
         __metadata('design:paramtypes', [])
     ], MyAppComponent);
