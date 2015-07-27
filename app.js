@@ -13,19 +13,88 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 var angular2_1 = require('angular2/angular2');
-var MyAppComponent = (function () {
-    function MyAppComponent() {
-        this.name = 'Aysegul';
+var Catstagram = (function () {
+    function Catstagram() {
+        this.cats = [
+            {
+                "title": "Synchronized waking up",
+                "url": "http://i.imgur.com/39yXnyh.gif",
+                "likes": 305
+            },
+            {
+                "title": "From under the sofa",
+                "url": "http://i.imgur.com/Bz0AsI6.gif",
+                "likes": 185
+            },
+            {
+                "title": "What I have to deal with on a daily basis",
+                "url": "http://i.imgur.com/MCmdIbF.gif",
+                "likes": 65
+            }
+        ];
     }
-    MyAppComponent = __decorate([
+    Catstagram = __decorate([
         angular2_1.Component({
-            selector: 'my-app' // Defines the <my-app></my-app> tag
+            selector: 'catstagram' // Defines the <my-app></my-app> tag
         }),
         angular2_1.View({
-            templateUrl: 'templates/main.html' // Defines the inline template for the component
+            templateUrl: 'templates/main.html',
+            directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [])
-    ], MyAppComponent);
-    return MyAppComponent;
+    ], Catstagram);
+    return Catstagram;
 })();
-angular2_1.bootstrap(MyAppComponent);
+angular2_1.bootstrap(Catstagram);
+// var cats = [
+// 	{
+// 		"title": "Synchronized waking up",
+// 		"url": "http://i.imgur.com/39yXnyh.gif",
+// 		"likes": 305
+// 	},
+// 	{
+// 		"title": "From under the sofa",
+// 		"url": "http://i.imgur.com/Bz0AsI6.gif",
+// 		"likes": 185
+// 	},
+// 	{
+// 		"title": "What I have to deal with on a daily basis",
+// 		"url": "http://i.imgur.com/MCmdIbF.gif",
+// 		"likes": 65
+// 	},
+// 	{
+// 		"title": "Durr, Bark woof",
+// 		"url": "https://i.imgur.com/mr4egM3.gif",
+// 		"likes": 49
+// 	},
+// 	{
+// 		"title": "I'm not very smart",
+// 		"url": "http://i.imgur.com/hJbijPN.gif",
+// 		"likes": 79
+// 	},
+// 	{
+// 		"title": "I like humans",
+// 		"url": "http://forgifs.com/gallery/d/217571-1/Cat-kiss-nuzzle.gif",
+// 		"likes": 29
+// 	},
+// 	{
+// 		"title": "Oh no!",
+// 		"url": "http://forgifs.com/gallery/d/216557-1/Cat-eyes-dilate.gif",
+// 		"likes": 68
+// 	},
+// 	{
+// 		"title": "Mommy wants to sleep.",
+// 		"url": "http://i.imgur.com/6yhkPFk.gif",
+// 		"likes": 69
+// 	},
+// 	{
+// 		"title": "I'm the king",
+// 		"url": "http://i.imgur.com/E2wNiC6.gif",
+// 		"likes": 69
+// 	},
+// 	{
+// 		"title": "I'm the king",
+// 		"url": "http://i.imgur.com/72zRVtC.gif",
+// 		"likes": 89
+// 	}
+// ]
