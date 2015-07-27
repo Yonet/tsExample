@@ -31,3 +31,9 @@ class FirstComponent{
 }
 ```
 
+6. Bootsrap the app
+
+```
+bootstrap(FirstComponent);
+```
+
