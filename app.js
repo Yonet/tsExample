@@ -13,8 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 var angular2_1 = require('angular2/angular2');
-var Catstagram = (function () {
-    function Catstagram() {
+var CatsService = (function () {
+    function CatsService() {
         this.cats = [
             {
                 "title": "Synchronized waking up",
@@ -33,15 +33,22 @@ var Catstagram = (function () {
             }
         ];
     }
+    return CatsService;
+})();
+var Catstagram = (function () {
+    function Catstagram(catsService) {
+        this.cats = catsService.cats;
+    }
     Catstagram = __decorate([
         angular2_1.Component({
-            selector: 'catstagram' // Defines the <my-app></my-app> tag
+            selector: 'catstagram',
+            appInjector: [CatsService]
         }),
         angular2_1.View({
             templateUrl: 'templates/main.html',
             directives: [angular2_1.NgFor]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [CatsService])
     ], Catstagram);
     return Catstagram;
 })();

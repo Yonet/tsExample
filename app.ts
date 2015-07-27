@@ -4,17 +4,8 @@
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
-@Component({
-	selector: 'catstagram' // Defines the <my-app></my-app> tag
-})
-@View({
-	templateUrl: 'templates/main.html', // Defines the inline template for the component
-	directives: [NgFor]
-})  
-
-class Catstagram {
-	name: string;
-	constructor() {
+class CatsService {
+	constructor(){
 		this.cats = [
 			{
 				"title": "Synchronized waking up",
@@ -33,7 +24,22 @@ class Catstagram {
 			}
 		];
 	}
+}
 
+@Component({
+	selector: 'catstagram', // Defines the <my-app></my-app> tag
+	appInjector: [CatsService]
+})
+@View({
+	templateUrl: 'templates/main.html', // Defines the inline template for the component
+	directives: [NgFor]
+})  
+
+class Catstagram {
+	name: string;
+	constructor(catsService: CatsService) {
+		this.cats = catsService.cats;
+	}
 }
 
 bootstrap(Catstagram);
