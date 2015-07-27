@@ -9,7 +9,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 })
 @View({
 	templateUrl: 'templates/main.html' // Defines the inline template for the component
-})
+})  
 
 class MyAppComponent {
 	name: string;
