@@ -3,7 +3,7 @@
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
-class CatsService {
+export class CatsService {
 	constructor(){
 		this.cats = [
 			{
