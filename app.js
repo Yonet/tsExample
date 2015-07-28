@@ -77,8 +77,8 @@ var Catstagram = (function () {
     }
     Catstagram.prototype.addPost = function (event, title, url) {
         var post = { likes: 0 };
-        post.title = title;
-        post.url = url;
+        post.title = title.value;
+        post.url = url.value;
         this.cats.push(post);
     };
     Catstagram.prototype.like = function (event, cat) {
@@ -88,8 +88,7 @@ var Catstagram = (function () {
     Catstagram = __decorate([
         angular2_1.Component({
             selector: 'catstagram',
-            viewInjector: [CatsService],
-            properties: []
+            viewInjector: [CatsService]
         }),
         angular2_1.View({
             templateUrl: 'templates/main.html',

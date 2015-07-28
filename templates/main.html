@@ -1,7 +1,7 @@
 
 <input type="text" placeholder="Title" #title>
-<input type="text" placeholder="Image Url" #imgUrl>
-<button (click)="addPost($event, title, imgUrl)">Add new cat</button>
+<input type="text" placeholder="Image Url" #url>
+<button (click)="addPost($event, title, url)">Add new cat</button>
 
 <ul class='post-container'>
 	<li *ng-for="#cat of cats">

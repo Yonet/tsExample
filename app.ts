@@ -64,8 +64,7 @@ class CatsService {
 
 @Component({
 	selector: 'catstagram', // Defines the <my-app></my-app> tag
-	viewInjector: [CatsService],
-	properties:[]
+	viewInjector: [CatsService]
 })
 @View({
 	templateUrl: 'templates/main.html', // Defines the inline template for the component
@@ -81,8 +80,8 @@ class Catstagram {
 	addPost(event, title, url){
 
 		var post = { likes: 0 };
-		post.title = title;
-		post.url = url;
+		post.title = title.value;
+		post.url = url.value;
 		this.cats.push(post);
 	}
 
