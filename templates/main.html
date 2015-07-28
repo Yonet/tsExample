@@ -3,6 +3,9 @@
 <h1>Hello {{ name }}</h1>
 <button (click)="name=ref.value">Change Name</button>
 
-<!-- Two way binding -->
 <!-- <input type="text" #name (keyup) >
 <h1>Hello {{ name.value }}</h1> -->
+
+<!-- Two way binding. -->
+<input type="text" [(ng-model)]="name">
+<h1>Hello {{ name }}</h1>

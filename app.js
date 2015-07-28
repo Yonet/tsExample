@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
-var angular2_1 = require('angular2/angular2');
+var angular2_1 = require("angular2/angular2");
 var Catstagram = (function () {
     function Catstagram() {
         this.cats = [{}];
@@ -22,7 +22,8 @@ var Catstagram = (function () {
             selector: 'catstagram' // Defines the <my-app></my-app> tag
         }),
         angular2_1.View({
-            templateUrl: 'templates/main.html' // Defines the inline template for the component
+            templateUrl: 'templates/main.html',
+            directives: [angular2_1.formDirectives]
         }), 
         __metadata('design:paramtypes', [])
     ], Catstagram);

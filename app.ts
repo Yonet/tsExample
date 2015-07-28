@@ -2,13 +2,14 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
-import {Component, View, bootstrap} from 'angular2/angular2';
+import {Component, View, bootstrap, formDirectives, EventEmitter} from "angular2/angular2";
 
 @Component({
 	selector: 'catstagram' // Defines the <my-app></my-app> tag
 })
 @View({
-	templateUrl: 'templates/main.html' // Defines the inline template for the component
+	templateUrl: 'templates/main.html', // Defines the inline template for the component
+	directives: [formDirectives]
 })  
 
 class Catstagram {
