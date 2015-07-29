@@ -64,40 +64,6 @@ class CatsService {
 	}
 }
 
-
-
-// @Component({
-// 	selector: 'home'
-// })
-// @View({
-// 	template: '<h1>Home</h1>'
-// })
-// class Home {
-
-// }
-
-// @Component({
-// 	selector: 'nav'
-// })
-// @View({
-// 	template: `
-//     <div>
-//       <ul>
-//         <li>Home</li>
-//         <li>About</li>
-//         <li>Blog</li>
-//       </ul>
-//     </div>
-//     <main>
-//       <router-outlet></router-outlet>
-//     </main>
-//   `
-// 	// directives:
-// })
-// class App {
-
-// }
-// 
 @Component({
 	selector: 'post',
 	properties: ["url", "title", "likes"]

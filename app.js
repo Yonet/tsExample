@@ -73,35 +73,6 @@ var CatsService = (function () {
     }
     return CatsService;
 })();
-// @Component({
-// 	selector: 'home'
-// })
-// @View({
-// 	template: '<h1>Home</h1>'
-// })
-// class Home {
-// }
-// @Component({
-// 	selector: 'nav'
-// })
-// @View({
-// 	template: `
-//     <div>
-//       <ul>
-//         <li>Home</li>
-//         <li>About</li>
-//         <li>Blog</li>
-//       </ul>
-//     </div>
-//     <main>
-//       <router-outlet></router-outlet>
-//     </main>
-//   `
-// 	// directives:
-// })
-// class App {
-// }
-// 
 var Post = (function () {
     function Post() {
     }
