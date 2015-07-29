@@ -15,5 +15,5 @@
 <div class="post" >
     <h2>{{title}}</h2>
     <img [src]="url" alt="">
-    <span>{{likes}} likes</span>
+    <span (click)="likes = likes + 1;">{{likes}} likes</span>
 </div>
