@@ -1,10 +1,15 @@
-
-<input type="text" placeholder="Title" #title>
-<input type="text" placeholder="Image Url" #url>
-<button (click)="addPost($event, title, url)">Add new cat</button>
-
-<div class='post-container'>
-	<post *ng-for="#cat of cats" [url]="cat.url" [title]="cat.title" [likes]="cat.likes">
-	</post>
+<div>
+	<ul>
+		<!-- Router-link must exist on an a tag -->
+		<li><a [router-link]="['/home']">Home</a></li>
+		<li><a [router-link]="['/about']">About</a></li>
+		<li><a [router-link]="['/blog']">Blog</a></li>
+	</ul>
 </div>
+<!-- Content goes here -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
 

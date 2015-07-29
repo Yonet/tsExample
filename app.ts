@@ -2,10 +2,11 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
-import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
-// import { routerInjectables, RouterOutlet, RouterLink} from 'angular2/router';
-// import {RouteDefinition} from './route_definition';
-// import {CatsService};
+import {Component, View, bootstrap, NgFor, bind} from 'angular2/angular2';
+import { RouteConfig, routerInjectables, RouterOutlet, RouterLink, HashLocationStrategy, LocationStrategy, Route} from 'angular2/router';
+import {bind, Injectable} from "angular2/di";
+
+//CatData Service
 class CatsService {
 	constructor(){
 		this.cats = [
@@ -64,6 +65,38 @@ class CatsService {
 	}
 }
 
+// About Page
+@Component({
+	selector: 'about'
+})
+
+@View({
+	template: `
+	<div>
+      About Page Here
+    </div>
+  `
+})
+class About {
+
+}
+
+// Blog Page
+@Component({
+	selector: 'blog'
+})
+
+@View({
+	template: `
+	<div>
+      Blog Page Here
+    </div>
+  `
+})
+class Blog {
+
+}
+
 @Component({
 	selector: 'post',
 	properties: ["url", "title", "likes"]
@@ -76,16 +109,16 @@ class Post {
 
 }
 
-//Catstagram
+
 @Component({
-	selector: 'catstagram', // Defines the <my-app></my-app> tag
+	selector: 'post-list', // Defines the <my-app></my-app> tag
 	viewInjector: [CatsService]
 })
 @View({
-	templateUrl: 'templates/main.html', // Defines the inline template for the component
-	directives: [NgFor, Post]
+	templateUrl: 'templates/post-list.html', // Defines the inline template for the component
+	directives: [NgFor, Post, RouterOutlet, RouterLink]
 })
-class Catstagram {
+class PostList {
 	name: string;
 	constructor(catsService: CatsService) {
 		this.cats = catsService.cats;
@@ -105,8 +138,26 @@ class Catstagram {
 	}
 }
 
+//Catstagram
+@RouteConfig([
+	new Route({ path: '/', component: PostList, as 'home'}),
+	new Route({ path: '/about', component: About, as 'about'}),
+	new Route({ path: '/blog', component: Blog, as 'blog'})
+])
+
+@Component({
+	selector: 'catstagram',
+	appInjector: [routerInjectables],
+})
+@View({
+	templateUrl: 'templates/main.html',
+	directives: [RouterOutlet, RouterLink]//RouterOutlet sets the content, RouterLink links to the url
+})
+class Catstagram {
+}
+
 ///Catstagram
 
-bootstrap(Catstagram, [/*routerInjectables*/]);
+bootstrap(Catstagram, [routerInjectables, bind(LocationStrategy).toClass(HashLocationStrategy)]);
 
-
+//bind(LocationStrategy).toClass(HashLocationStrategy) is a hack that will not be there in the near future.

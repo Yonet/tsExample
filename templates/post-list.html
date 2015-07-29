@@ -1,0 +1,10 @@
+<div>
+	<input type="text" placeholder="Title" #title>
+	<input type="text" placeholder="Image Url" #url>
+	<button (click)="addPost($event, title, url)">Add new cat</button>
+	
+</div>
+<div class='post-container'>
+	<post *ng-for="#cat of cats | reverse" [url]="cat.url" [title]="cat.title" [likes]="cat.likes">
+	</post>
+</div>
