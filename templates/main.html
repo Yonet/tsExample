@@ -3,14 +3,8 @@
 <input type="text" placeholder="Image Url" #url>
 <button (click)="addPost($event, title, url)">Add new cat</button>
 
-<ul class='post-container'>
-	<li *ng-for="#cat of cats">
-		 <div class="title">
-            <h1>{{ cat.title }}</h1>
-            <like>{{ cat.likes }} <span (click)="like($event, cat)">like</span></like>
-        </div>
-		<img [src]="cat.url"/>
-		<span>{{cat.likes}} likes</span>
-	</li>
-</ul>
+<div class='post-container'>
+	<post *ng-for="#cat of cats" [url]="cat.url" [title]="cat.title" [likes]="cat.likes">
+	</post>
+</div>
 

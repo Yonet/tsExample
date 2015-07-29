@@ -13,6 +13,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 var angular2_1 = require('angular2/angular2');
+// import { routerInjectables, RouterOutlet, RouterLink} from 'angular2/router';
+// import {RouteDefinition} from './route_definition';
 // import {CatsService};
 var CatsService = (function () {
     function CatsService() {
@@ -71,6 +73,51 @@ var CatsService = (function () {
     }
     return CatsService;
 })();
+// @Component({
+// 	selector: 'home'
+// })
+// @View({
+// 	template: '<h1>Home</h1>'
+// })
+// class Home {
+// }
+// @Component({
+// 	selector: 'nav'
+// })
+// @View({
+// 	template: `
+//     <div>
+//       <ul>
+//         <li>Home</li>
+//         <li>About</li>
+//         <li>Blog</li>
+//       </ul>
+//     </div>
+//     <main>
+//       <router-outlet></router-outlet>
+//     </main>
+//   `
+// 	// directives:
+// })
+// class App {
+// }
+// 
+var Post = (function () {
+    function Post() {
+    }
+    Post = __decorate([
+        angular2_1.Component({
+            selector: 'post',
+            properties: ["url", "title", "likes"]
+        }),
+        angular2_1.View({
+            templateUrl: 'templates/cat.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], Post);
+    return Post;
+})();
+//Catstagram
 var Catstagram = (function () {
     function Catstagram(catsService) {
         this.cats = catsService.cats;
@@ -92,10 +139,11 @@ var Catstagram = (function () {
         }),
         angular2_1.View({
             templateUrl: 'templates/main.html',
-            directives: [angular2_1.NgFor]
+            directives: [angular2_1.NgFor, Post]
         }), 
         __metadata('design:paramtypes', [CatsService])
     ], Catstagram);
     return Catstagram;
 })();
-angular2_1.bootstrap(Catstagram);
+///Catstagram
+angular2_1.bootstrap(Catstagram, []);

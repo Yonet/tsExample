@@ -3,6 +3,8 @@
 
 //ES6 module syntax to import three symbols from the Angular module. The module will load at runtime.
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
+// import { routerInjectables, RouterOutlet, RouterLink} from 'angular2/router';
+// import {RouteDefinition} from './route_definition';
 // import {CatsService};
 class CatsService {
 	constructor(){
@@ -62,15 +64,61 @@ class CatsService {
 	}
 }
 
+
+
+// @Component({
+// 	selector: 'home'
+// })
+// @View({
+// 	template: '<h1>Home</h1>'
+// })
+// class Home {
+
+// }
+
+// @Component({
+// 	selector: 'nav'
+// })
+// @View({
+// 	template: `
+//     <div>
+//       <ul>
+//         <li>Home</li>
+//         <li>About</li>
+//         <li>Blog</li>
+//       </ul>
+//     </div>
+//     <main>
+//       <router-outlet></router-outlet>
+//     </main>
+//   `
+// 	// directives:
+// })
+// class App {
+
+// }
+// 
+@Component({
+	selector: 'post',
+	properties: ["url", "title", "likes"]
+})
+
+@View({
+	templateUrl: 'templates/cat.html'
+})
+class Post {
+
+}
+
+//Catstagram
 @Component({
 	selector: 'catstagram', // Defines the <my-app></my-app> tag
 	viewInjector: [CatsService]
 })
 @View({
 	templateUrl: 'templates/main.html', // Defines the inline template for the component
-	directives: [NgFor]
+	directives: [NgFor, Post]
 })
-
 class Catstagram {
 	name: string;
 	constructor(catsService: CatsService) {
@@ -91,6 +139,8 @@ class Catstagram {
 	}
 }
 
-bootstrap(Catstagram);
+///Catstagram
+
+bootstrap(Catstagram, [/*routerInjectables*/]);
 
 
